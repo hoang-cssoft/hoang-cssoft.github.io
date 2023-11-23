@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Demo Universal Link</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            text-align: center;
+            padding: 20px;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 15px;
+            margin: 10px 0;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        p {
+            color: #333;
+        }
+    </style>
+    <script>
+        function setCookie() {
+            const now = new Date();
+            const timeString = now.getHours() + ":" + now.getMinutes() + ":" + now.getSeconds();
+            document.cookie = "my_cookie=" + timeString + ";path=/";
+            showCookies();
+        }
+
+        function showCookies() {
+            const cookiesArray = document.cookie.split(';');
+            const myCookie = cookiesArray.find(cookie => cookie.trim().startsWith("my_cookie="));
+            if (myCookie) {
+                document.getElementById("cookies").innerText = "my_cookie: " + myCookie.split('=')[1];
+            } else {
+                document.getElementById("cookies").innerText = "my_cookie not found";
+            }
+        }
+
+        window.onload = showCookies;
+    </script>
+</head>
+<body>
+    <h1>Demo Universal Link</h1>
+    <p>Url=<span id="url"></span></p>
+    <button onclick="setCookie()">Set Cookie</button>
+    <p id="cookies"></p>
+
+    <script>
+        document.getElementById("url").innerText = window.location.href;
+    </script>
+</body>
+</html>
+
+
+

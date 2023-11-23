@@ -1,0 +1,15 @@
+{
+   "applinks": {
+      "details": [
+         {
+            "appIDs": [ "374PS4VZU3.com.smartplate.demoBrowserApp" ],
+            "components": [
+               {
+                  "/": "/download_app.html",
+                  "comment": "Download app url"
+               }
+            ]
+         }
+      ]
+   }
+ }
